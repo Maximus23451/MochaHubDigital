@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order - MochaHub Digital</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f4f0;
+            color: #333;
+            text-align: center;
+        }
+
+        header {
+            background-color: #6f4e37; /* Coffee Brown */
+            color: #fff;
+            padding: 1.5rem 0;
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        main {
+            padding: 2rem;
+        }
+
+        .order-section {
+            margin: 2rem auto;
+            max-width: 600px;
+            padding: 2rem;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            background-color: #fff;
+        }
+
+        .order-section h2 {
+            color: #6f4e37;
+            font-size: 2rem;
+        }
+
+        .order-section p {
+            font-size: 1.1rem;
+        }
+
+        .order-section a {
+            display: inline-block;
+            margin-top: 1rem;
+            padding: 10px 20px;
+            background-color: #d4a373;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            transition: background-color 0.3s ease;
+        }
+
+        .order-section a:hover {
+            background-color: #b97e56;
+        }
+
+        /* Green Checkmark Styles */
+        .checkmark-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 2rem auto;
+        }
+
+        .checkmark {
+            width: 80px;
+            height: 80px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 3px solid #4caf50;
+            border-radius: 50%;
+            position: relative;
+            background-color: transparent;
+            animation: pop 0.3s ease-in-out;
+        }
+
+        .checkmark::before {
+            content: '';
+            position: absolute;
+            width: 15px;
+            height: 30px;
+            border: solid #4caf50;
+            border-width: 0 3px 3px 0;
+            transform: rotate(45deg) scale(0);
+            transform-origin: center;
+            animation: draw 0.5s ease forwards 0.3s;
+        }
+
+        @keyframes pop {
+            0% {
+                transform: scale(0.5);
+                opacity: 0;
+            }
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        @keyframes draw {
+            0% {
+                transform: rotate(45deg) scale(0);
+            }
+            100% {
+                transform: rotate(45deg) scale(1);
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>MochaHub Digital</h1>
+    </header>
+
+    <main>
+        <div class="order-section">
+            <h2>Your Order is Confirmed!</h2>
+            
+            <!-- Green Checkmark Animation Replaces the GIF -->
+            <div class="checkmark-container" id="checkmark-container"></div>
+            
+            <p>Thank you for ordering with MochaHub Digital. Your delicious mocha coffee will be ready soon!</p>
+            <a href="index.html">Back to Home</a>
+        </div>
+    </main>
+
+  <script>
+    function showCheckmark() {
+      const container = document.getElementById('checkmark-container');
+
+      // Create the checkmark element
+      const checkmark = document.createElement('div');
+      checkmark.classList.add('checkmark');
+
+      // Append the checkmark to the container
+      container.appendChild(checkmark);
+    }
+
+    // Simulate a checkout confirmation
+    setTimeout(showCheckmark, 1000);
+  </script>
+</body>
+</html>
